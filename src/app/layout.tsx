@@ -8,7 +8,7 @@ import Footer from "@/layout/Footer";
 
 const barlow = Barlow({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-barlow'
 })

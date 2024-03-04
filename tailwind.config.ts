@@ -17,19 +17,30 @@ const config: Config = {
 
       },
       colors: {
+        'brand-blue-dark': '#008ECB',
+        'brand-blue-default': '#07BCFF',
+        'brand-blue-light': '#6ED8FF',
 
+        'brand-green-dark': '#2AB163',
+        'brand-green-default': '#41DD83',
+        'brand-green-light': '#79ECAA',
+
+        'neutral-gray-100': '#0A1D2E',
+        'neutral-gray-200': '#29394A',
+        'neutral-gray-300': '#475567',
+        'neutral-gray-400': '#7C8999',
+        'neutral-gray-500': '#A6AEB8',
+        'neutral-gray-600': '#CDD1D6',
       },
       fontFamily: {
-        barlow: ['var(--font-barlow)'],
+        'font-title': ['var(--font-barlow)'],
+        'font-body': ['var(--font-barlow)'],
       },
       padding: {
         'page-padding': '1.5rem',
       },
       maxWidth: {
         'grid': '76rem'
-      },
-      animation: {
-        'default-animation': 'ease 250ms'
       },
     },
   },
