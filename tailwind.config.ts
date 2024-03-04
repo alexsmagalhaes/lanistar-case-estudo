@@ -40,7 +40,7 @@ const config: Config = {
         'page-padding': '1.5rem',
       },
       maxWidth: {
-        'grid': '76rem'
+        'grid': '79rem'
       },
     },
   },

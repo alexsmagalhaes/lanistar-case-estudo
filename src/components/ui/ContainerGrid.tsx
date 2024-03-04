@@ -6,9 +6,8 @@ interface ContainerGridProps {
   className?: string
 }
 
-function ContainerGrid({ children, className = "" }: ContainerGridProps): ReactNode {
-
-  const defaultClass = 'max-w-grid mx-auto px-page-padding'
+export default function ContainerGrid({ children, className = "" }: ContainerGridProps): ReactNode {
+  const defaultClass = 'max-w-grid mx-auto w-full px-page-padding'
   const combinedClass = twMerge(defaultClass, className);
 
   return (
@@ -18,4 +17,3 @@ function ContainerGrid({ children, className = "" }: ContainerGridProps): ReactN
   );
 }
 
-export default ContainerGrid;
