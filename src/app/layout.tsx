@@ -5,6 +5,7 @@ import "./globals.css";
 //components
 import Navbar from "@/layout/Navbar";
 import Footer from "@/layout/Footer";
+import FavButton from "@/components/ui/FavButton";
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -28,6 +29,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <Navbar />
         {children}
         <Footer />
+        <FavButton />
+        
       </body>
     </html>
   );
