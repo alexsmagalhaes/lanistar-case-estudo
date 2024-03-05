@@ -2,26 +2,32 @@ import { ReactNode } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 const ButtonVariants = tv({
-   base: 'bg-brand-blue-default hover:bg-brand-blue-dark font-semibold border border-brand-blue-default hover:border-brand-blue-dark text-white uppercase ring-0 ring-brand-blue-default ring-opacity-0 hover:ring-4 hover:ring-opacity-20 transition duration-300 ease-in-out rounded-md',
+   base: 'font-semibold uppercase ring-0 transition-all duration-300 ring-opacity-0 ease-in-out rounded-md flex items-center gap-4',
    variants: {
       size: {
          default: 'text-base/snug px-8 py-4',
       },
+      type: {
+         primary: 'bg-brand-blue-default hover:bg-brand-blue-dark hover:ring-4 hover:ring-opacity-20 border border-brand-blue-default hover:border-brand-blue-dark ring-brand-blue-default text-white',
+         ghost: 'text-neutral-gray-200 [&_svg]:text-brand-blue-default [&_svg]:transition [&_svg]:ease-in-out [&_svg]:duration-300 [&_svg]:hover:text-brand-blue-dark py-0 px-0'
+      }
    },
    defaultVariants: {
       size: "default",
+      type: "primary"
    }
 });
 
 interface ButtonRootProps {
    children: ReactNode,
    size?: VariantProps<typeof ButtonVariants>['size'],
+   type?: VariantProps<typeof ButtonVariants>['type'],
 }
 
-export default function ButtonRoot({ children, size, ...props }: ButtonRootProps): ReactNode {
+export default function ButtonRoot({ children, size, type, ...props }: ButtonRootProps): ReactNode {
 
    return (
-      <button className={ButtonVariants({ size })} {...props}>
+      <button className={ButtonVariants({ size, type })} {...props}>
          {children}
       </button>
    );
