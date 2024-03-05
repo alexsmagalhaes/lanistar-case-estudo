@@ -9,6 +9,10 @@ type Response<T> = [
 
 function usePersistedState<T>(key: string, initialState: T): Response<T> {
   const [state, setState] = useState(() => {
+
+    const ISSERVER = typeof window === "undefined";
+    if(ISSERVER) return undefined;
+
     const storageValue = localStorage.getItem(key);
 
     if (storageValue) {
