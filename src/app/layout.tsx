@@ -3,8 +3,8 @@ import { Barlow } from "next/font/google";
 import "./globals.css";
 
 //components
-import Navbar from "@/layout/Navbar";
-import Footer from "@/layout/Footer";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 import FavButton from "@/components/ui/FavButton";
 
 const barlow = Barlow({
@@ -26,7 +26,6 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="pt">
       <body className={barlow.className}>
-        <Navbar />
         {children}
         <Footer />
         <FavButton />
