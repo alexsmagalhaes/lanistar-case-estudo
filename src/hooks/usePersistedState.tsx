@@ -7,13 +7,19 @@ type Response<T> = [
 
 function usePersistedState<T>(key: string, initialState: T): Response<T> {
   const [state, setState] = useState(() => {
-    const storageValue = localStorage.getItem(key);
+    let storageValue = undefined;
 
-    if (storageValue) {
-      return JSON.parse(storageValue);
-    } else {
-      return initialState;
+    if (typeof window !== "undefined") {
+      storageValue = localStorage.getItem(key);
+
+      if (storageValue) {
+        return JSON.parse(storageValue);
+      } else {
+        return initialState;
+      }
     }
+    return undefined;
+
   });
 
   useEffect(() => {
