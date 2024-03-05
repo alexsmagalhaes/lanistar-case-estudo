@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 
 type Response<T> = [
@@ -7,19 +9,13 @@ type Response<T> = [
 
 function usePersistedState<T>(key: string, initialState: T): Response<T> {
   const [state, setState] = useState(() => {
-    let storageValue = undefined;
+    const storageValue = localStorage.getItem(key);
 
-    if (typeof window !== "undefined") {
-      storageValue = localStorage.getItem(key);
-
-      if (storageValue) {
-        return JSON.parse(storageValue);
-      } else {
-        return initialState;
-      }
+    if (storageValue) {
+      return JSON.parse(storageValue);
+    } else {
+      return initialState;
     }
-    return undefined;
-
   });
 
   useEffect(() => {
