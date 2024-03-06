@@ -1,6 +1,7 @@
-'use client'
+"use client"
 
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import Cookies from 'js-cookie';
 
 type Response<T> = [
   T,
@@ -8,21 +9,21 @@ type Response<T> = [
 ];
 
 function usePersistedState<T>(key: string, initialState: T): Response<T> {
-  // Função para obter o valor persistido do localStorage
-  const getStoredValue = (): T | null => {
-    const storedValue = localStorage.getItem(key);
-    return storedValue ? JSON.parse(storedValue) : null;
-  };
-
-  // Estado inicial é o valor persistido ou o valor inicial fornecido
   const [state, setState] = useState<T>(() => {
-    const storedValue = getStoredValue();
-    return storedValue !== null ? storedValue : initialState;
+    //const storageValue = sessionStorage.getItem(key);
+    const storageValue = Cookies.get(key);
+
+    if (storageValue) {
+      return (JSON.parse(storageValue));
+    } else {
+      return (initialState);
+    }
   });
 
-  // Atualizar o localStorage sempre que o estado for alterado
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(state));
+      //sessionStorage.setItem(key, JSON.stringify(state));
+      Cookies.set(key, JSON.stringify(state))
+
   }, [key, state]);
 
   return [state, setState];

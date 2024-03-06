@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, useState } from "react";
+import { ReactNode, use, useEffect, useState } from "react";
 import Image, { StaticImageData } from 'next/image'
 import usePersistedState from "@/hooks/usePersistedState";
 
@@ -31,11 +31,24 @@ const languages: languagesProps[] = [
 
 export default function DropDownLanguage(): ReactNode {
    const [show, setShow] = useState(false) // dropdown activation control
-   const [language, setLanguage] = usePersistedState<languagesProps>('selectedLanguage',languages[0]) // set current language
+   const [language, setLanguage] = useState<languagesProps>(languages[0]) // set current language
+
+   // get persisted language from a custom hook
+   const [persistedLanguage, setPersistedLanguage] = usePersistedState<languagesProps>('language', language)
+
+   // set up a site language with a chosen language previous
+   useEffect(() => {
+      setLanguage(persistedLanguage)
+   }, [])
+
+   // update a persisted chose the language in cookies
+   useEffect(() => {
+      setPersistedLanguage(language)
+   }, [language])
 
    // toggle acvation dropdown
    const handleToggle = (): void => {
-      setShow(!show)
+      show ? setShow(false) : setShow(true)
    }
 
    // general control function to set language and providers
