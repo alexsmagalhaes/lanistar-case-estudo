@@ -84,7 +84,10 @@ export default function DropDownLanguage(): ReactNode {
                      <button
                         key={index}
                         className="w-full"
-                        onClick={() => handleLanguage({ code, icon })}
+                        onClick={() => {
+                           handleLanguage({ code, icon })
+                           handleToggle()
+                        }}
                      >
                         <Image
                            className="min-w-6 h-6 cursor-pointer"
