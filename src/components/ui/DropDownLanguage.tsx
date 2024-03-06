@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import Image, { StaticImageData } from 'next/image'
 import usePersistedState from "@/hooks/usePersistedState";
 
@@ -31,7 +31,7 @@ const languages: languagesProps[] = [
 
 export default function DropDownLanguage(): ReactNode {
    const [show, setShow] = useState(false) // dropdown activation control
-   const [language, setLanguage] = useState<languagesProps>(languages[0]) // set current language
+   const [language, setLanguage] = usePersistedState<languagesProps>('selectedLanguage',languages[0]) // set current language
 
    // toggle acvation dropdown
    const handleToggle = (): void => {
