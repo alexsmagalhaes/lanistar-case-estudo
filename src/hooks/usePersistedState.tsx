@@ -11,20 +11,25 @@ function usePersistedState<T>(key: string, initialState: T): Response<T> {
   const [state, setState] = useState(() => {
 
     let storageValue
-    
-    if (window !== undefined)
+
+    if (window !== undefined) {
       storageValue = localStorage.getItem(key);
 
-    if (storageValue) {
-      return JSON.parse(storageValue);
+      if (storageValue) {
+        return JSON.parse(storageValue);
+      } else {
+        return initialState;
+      }
     } else {
       return initialState;
     }
   });
 
   useEffect(() => {
-    if (window !== undefined)
+    if (window !== undefined) {
       localStorage.setItem(key, JSON.stringify(state));
+    }
+
   }, [key, state]);
 
   return [state, setState];

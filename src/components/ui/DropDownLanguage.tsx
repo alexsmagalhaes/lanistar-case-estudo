@@ -35,7 +35,7 @@ export default function DropDownLanguage(): ReactNode {
 
    // toggle acvation dropdown
    const handleToggle = (): void => {
-      show ? setShow(false) : setShow(true)
+      setShow(!show)
    }
 
    // general control function to set language and providers
