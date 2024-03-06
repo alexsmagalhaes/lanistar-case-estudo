@@ -25,6 +25,8 @@ const config: Config = {
         'brand-green-default': '#41DD83',
         'brand-green-light': '#79ECAA',
 
+        'brand-pink-default': '#FFA6E3',
+
         'neutral-gray-100': '#0A1D2E',
         'neutral-gray-200': '#29394A',
         'neutral-gray-300': '#475567',
