@@ -12,7 +12,7 @@ function usePersistedState<T>(key: string, initialState: T): Response<T> {
 
     let storageValue
 
-    if (window !== undefined) {
+    if (typeof window !== undefined) {
       storageValue = localStorage.getItem(key);
 
       if (storageValue) {
@@ -26,7 +26,7 @@ function usePersistedState<T>(key: string, initialState: T): Response<T> {
   });
 
   useEffect(() => {
-    if (window !== undefined) {
+    if (typeof window !== undefined) {
       localStorage.setItem(key, JSON.stringify(state));
     }
 
