@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 
@@ -8,28 +8,21 @@ type Response<T> = [
 ];
 
 function usePersistedState<T>(key: string, initialState: T): Response<T> {
-  const [state, setState] = useState(() => {
+  // Função para obter o valor persistido do localStorage
+  const getStoredValue = (): T | null => {
+    const storedValue = localStorage.getItem(key);
+    return storedValue ? JSON.parse(storedValue) : null;
+  };
 
-    let storageValue
-
-    if (typeof window !== undefined || typeof window !== 'undefined') {
-      storageValue = localStorage.getItem(key);
-
-      if (storageValue) {
-        return JSON.parse(storageValue);
-      } else {
-        return initialState;
-      }
-    } else {
-      return initialState;
-    }
+  // Estado inicial é o valor persistido ou o valor inicial fornecido
+  const [state, setState] = useState<T>(() => {
+    const storedValue = getStoredValue();
+    return storedValue !== null ? storedValue : initialState;
   });
 
+  // Atualizar o localStorage sempre que o estado for alterado
   useEffect(() => {
-    if (typeof window !== undefined || typeof window !== 'undefined') {
-      localStorage.setItem(key, JSON.stringify(state));
-    }
-
+    localStorage.setItem(key, JSON.stringify(state));
   }, [key, state]);
 
   return [state, setState];
