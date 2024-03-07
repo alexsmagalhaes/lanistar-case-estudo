@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, use, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Image, { StaticImageData } from 'next/image'
 import usePersistedState from "@/hooks/usePersistedState";
 
@@ -74,9 +74,9 @@ export default function DropDownLanguage(): ReactNode {
             />
          </button>
 
-         <div className={`flex gap-2 flex-col absolute bg-white py-3 px-3 rounded shadow-2xl shadow-indigo-950/20 transition ease-in-out duration-200 top-8 
-         ${show ? 'opacity-100 pointer-events-auto' :
-               'opacity-0 pointer-events-none'}`}>
+         <div className={`flex gap-2 flex-col absolute bg-white py-3 px-3 rounded shadow-2xl shadow-indigo-950/20 transition ease-in-out duration-200 top-8
+         ${show ? 'opacity-100 pointer-events-auto translate-y-0' :
+               'opacity-0 pointer-events-none translate-y-2'}`}>
 
             {
                languages.filter(item => item.code !== language.code).map(({ code, icon }: languagesProps, index: number) => {

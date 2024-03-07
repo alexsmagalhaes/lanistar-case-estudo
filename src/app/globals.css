@@ -8,10 +8,27 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Fluid Response Start*/
+/* html { 
+  font-size: calc(0.625rem + 0.41666666666666663vw); 
+}
+  @media screen and (max-width:1920px) { html { font-size: calc(0.625rem + 0.41666666666666674vw); } }
+  @media screen and (max-width:1440px) { html { font-size: calc(0.39866369710467703rem + 0.6681514476614699vw); } }
+  @media screen and (max-width:991px) { html { font-size: calc(0.7497474747474747rem + 0.40404040404040403vw); } }
+  @media screen and (max-width:496px) { html { font-size: calc(0.7489878542510121rem + 0.8097165991902835vw); } }
+  @media screen and (max-width:249px) { html { font-size: calc(0.8744959677419355rem + 0.8064516129032256vw); } } */
+
+/* Fluid Response End */
+
 body {
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.4;
+}
+
+/* Oculta a barra de rolagem do WebKit */
+*::-webkit-scrollbar {
+  display: none;
 }
 
 h1, 
@@ -20,5 +37,5 @@ h3,
 h4, 
 h5, 
 h6{
-  font-family: var(--font-body);
+  font-family: var(--font-title);
 }
