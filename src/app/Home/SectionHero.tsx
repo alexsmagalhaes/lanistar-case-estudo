@@ -3,7 +3,7 @@ import ContainerGrid from "@/components/ui/ContainerGrid";
 
 export default function SectionHero(): ReactNode {
    return (
-      <header className="min-h-[1000px]">
+      <header>
          <ContainerGrid>
             Olá
          </ContainerGrid>
