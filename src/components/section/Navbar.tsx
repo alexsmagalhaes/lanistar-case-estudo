@@ -2,11 +2,11 @@ import { ReactNode } from "react";
 import ContainerGrid from "@/components/ui/ContainerGrid";
 import Image from 'next/image'
 import Link from 'next/link'
-import Button from "./Button";
+import Button from "../ui/Button";
 
 //assets
 import Logo from '@/assets/brand/lanistar-logo.svg'
-import DropDownLanguage from "./DropDownLanguage";
+import DropDownLanguage from "../ui/DropDownLanguage";
 
 interface pagesRefProps {
    text: string,

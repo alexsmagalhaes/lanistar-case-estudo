@@ -20,6 +20,16 @@ html {
 
 /* Fluid Response End */
 
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: #2AB163;
+}
+
+::selection {
+  color: #fff;
+  background: #2AB163;
+}
+
 body {
   font-family: var(--font-body);
   font-weight: 400;

@@ -6,7 +6,8 @@ import "./globals.css";
 import FavButton from "@/components/ui/FavButton";
 import { ModalContextProvider } from "./context/ModalContext";
 import Modal from "@/components/ui/Modal";
-import Footer from "@/components/ui/Footer";
+import Footer from "@/components/section/Footer";
+import Navbar from "@/components/section/Navbar";
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -27,11 +28,12 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="pt">
       <body className={barlow.className}>
-        {children}
-        <Footer />
-        <FavButton />
-
         <ModalContextProvider>
+          {/* <Navbar /> */}
+          {children}
+          <Footer />
+
+          <FavButton />
           <Modal.Root>
             <Modal.Card />
           </Modal.Root>

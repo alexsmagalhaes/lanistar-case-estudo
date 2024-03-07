@@ -5,7 +5,7 @@ export default function SectionHero(): ReactNode {
    return (
       <header>
          <ContainerGrid>
-            Olá
+            <></>
          </ContainerGrid>
       </header>
    )

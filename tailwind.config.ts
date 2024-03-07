@@ -33,6 +33,8 @@ const config: Config = {
         'neutral-gray-400': '#7C8999',
         'neutral-gray-500': '#A6AEB8',
         'neutral-gray-600': '#CDD1D6',
+
+        'dark': '#0A1D2E',
       },
       fontFamily: {
         'font-title': ['var(--font-barlow)'],
