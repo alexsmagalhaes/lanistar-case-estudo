@@ -27,15 +27,16 @@ const pagesRef = [
 ]
 
 export default function Navbar(): ReactNode {
+   
    return (
-      <nav className="py-6 max-h-24 bg-white bg-opacity-90 sticky top-0 border-b-neutral-gray-600 border-b border-opacity-30 backdrop-blur">
+      <nav className="py-6 max-h-24 bg-white bg-opacity-90 sticky top-0 border-b-neutral-gray-600 border-b border-opacity-30 z-40 backdrop-blur">
          <ContainerGrid className="flex items-center justify-between">
             <Link href='/' className="hover:opacity-85 transition duration-300 ease-in-out">
                <Image src={Logo} alt={"logo lenistar"} width={176} priority/>
             </Link>
 
-            <div className="flex gap-20">
-               <div className="flex gap-14">
+            <div className="flex gap-24">
+               <div className="flex gap-14 mr-2">
                   {
                      pagesRef.map(({ text, path }: pagesRefProps, index: number) => {
                         return (

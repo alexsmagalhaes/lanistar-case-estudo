@@ -8,6 +8,8 @@ import { ModalContextProvider } from "./context/ModalContext";
 import Modal from "@/components/ui/Modal";
 import Footer from "@/components/section/Footer";
 import Navbar from "@/components/section/Navbar";
+import SectionCta from "@/components/section/SectionCta";
+import ScrollSmooth from "@/components/ui/ScrollSmooth";
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -27,16 +29,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="pt">
-      <body className={barlow.className}>
+      <body className={barlow.className} suppressHydrationWarning={true}>
         <ModalContextProvider>
-          {/* <Navbar /> */}
-          {children}
-          <Footer />
+          <ScrollSmooth>
+            <Navbar />
+            {children}
+            <SectionCta />
+            <Footer />
 
-          <FavButton />
-          <Modal.Root>
-            <Modal.Card />
-          </Modal.Root>
+            <FavButton />
+            <Modal.Root>
+              <Modal.Card />
+            </Modal.Root>
+          </ScrollSmooth>
         </ModalContextProvider>
       </body>
     </html>

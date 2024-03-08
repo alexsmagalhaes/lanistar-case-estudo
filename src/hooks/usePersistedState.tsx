@@ -22,7 +22,7 @@ function usePersistedState<T>(key: string, initialState: T): Response<T> {
 
   useEffect(() => {
       //sessionStorage.setItem(key, JSON.stringify(state));
-      Cookies.set(key, JSON.stringify(state))
+      Cookies.set(key, JSON.stringify(state), {expires: 7})
 
   }, [key, state]);
 
