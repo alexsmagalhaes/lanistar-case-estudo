@@ -65,7 +65,7 @@ export default function Footer(): ReactNode {
       <footer className="pb-14 pt-28 text-neutral-gray-300">
          <ContainerGrid>
             <div className="flex justify-between items-start gap-[5rem]">
-               <div className="gap-8 flex justify-between max-w-[18.5rem] mr-8">
+               <div className="gap-8 flex justify-between items-start max-w-[18.5rem] mr-8">
                   <Link
                      className="transition duration-300 ease-in-out hover:opacity-85"
                      href="/"
