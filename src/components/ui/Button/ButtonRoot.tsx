@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 import { tv, VariantProps } from "tailwind-variants";
 
 const ButtonVariants = tv({
@@ -22,12 +23,16 @@ interface ButtonRootProps {
    children: ReactNode,
    size?: VariantProps<typeof ButtonVariants>['size'],
    type?: VariantProps<typeof ButtonVariants>['type'],
+   className?: string
 }
 
-export default function ButtonRoot({ children, size, type, ...props }: ButtonRootProps): ReactNode {
+export default function ButtonRoot({ children, size, type, className, ...props }: ButtonRootProps): ReactNode {
+
+   const defaultClass = ButtonVariants({ size, type })
+   const mergedClass = twMerge(defaultClass, className)
 
    return (
-      <button className={ButtonVariants({ size, type })} {...props}>
+      <button className={mergedClass} {...props}>
          {children}
       </button>
    );
