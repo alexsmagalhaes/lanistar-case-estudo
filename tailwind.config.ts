@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        '@tablet': '640px',
-        '@laptop': '1024px',
-        '@desktop': '1280px',
+        '@tablet': '40rem',
+        '@laptop': '64rem',
+        '@desktop': '80rem',
       },
       backgroundImage: {
 
@@ -35,6 +35,7 @@ const config: Config = {
         'neutral-gray-600': '#CDD1D6',
 
         'dark': '#0A1D2E',
+        'light': '#F9F9FC'
       },
       fontFamily: {
         'font-title': ['var(--font-barlow)'],

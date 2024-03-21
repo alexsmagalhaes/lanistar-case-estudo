@@ -3,6 +3,7 @@ import ContainerGrid from "@/components/ui/ContainerGrid";
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from "../ui/Button";
+import { ModalActiveWrap } from "@/app/context/ModalContext";
 
 //assets
 import Logo from '@/assets/brand/lanistar-logo.svg'
@@ -53,14 +54,15 @@ export default function Navbar(): ReactNode {
                </div>
 
                <DropDownLanguage />
-
-               <Button.Root type="ghost">
-                  <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <rect x="1" y="1" width="30" height="22" rx="1" stroke="currentColor" strokeWidth="2" />
-                     <rect x="4.36353" y="4.36353" width="5.81818" height="4.36364" rx="2" fill="currentColor" />
-                  </svg>
-                  Botão de ação
-               </Button.Root>
+               <ModalActiveWrap>
+                  <Button.Root type="ghost">
+                     <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="30" height="22" rx="1" stroke="currentColor" strokeWidth="2" />
+                        <rect x="4.36353" y="4.36353" width="5.81818" height="4.36364" rx="2" fill="currentColor" />
+                     </svg>
+                     PRE-REGISTER NOW
+                  </Button.Root>
+               </ModalActiveWrap>
             </div>
          </ContainerGrid>
       </nav>
