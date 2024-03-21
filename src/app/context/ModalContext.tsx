@@ -1,27 +1,34 @@
 "use client"
 
-import { createContext, ReactNode, useContext } from "react";
-import useModal from "@/hooks/useModal";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import useScrollBodyLock from "@/hooks/useScrollBodyLock";
 
 type ContextType = {
    modalActive: boolean;
-   setModalActive: (active: boolean) => void;
+   showModal: () => void;
+   hideModal: () => void;
+   toggleModal: () => void;
 };
 
 const ModalContext = createContext<ContextType | undefined>(undefined);
 
-export function useModalContext() {
-   const context = useContext(ModalContext);
-   
-   return context;
-}
-
 export function ModalContextProvider({ children }: { children: ReactNode }) {
-   const { modalActive, setModalActive } = useModal();
+   const [modalActive, setModalActive] = useState(false);
+   const { disableScroll, enableScroll } = useScrollBodyLock();
 
-   const contextValue: ContextType = {
+   useEffect(() => {
+      modalActive ? disableScroll() : enableScroll();
+   }, [modalActive, disableScroll, enableScroll]);
+
+   const showModal = () => setModalActive(true);
+   const hideModal = () => setModalActive(false);
+   const toggleModal = () => setModalActive(!modalActive);
+
+   const contextValue = {
       modalActive,
-      setModalActive
+      showModal,
+      hideModal,
+      toggleModal
    };
 
    return (
@@ -29,4 +36,22 @@ export function ModalContextProvider({ children }: { children: ReactNode }) {
          {children}
       </ModalContext.Provider>
    );
+}
+
+export function useModalContext() {
+   const context = useContext(ModalContext);
+   if (!context) {
+      throw new Error("useModalContext must be used within a ModalContextProvider");
+   }
+   return context;
+}
+
+export function ModalActiveWrap({ children }: { children: ReactNode }) {
+   const { showModal } = useModalContext()
+
+   return (
+      <div onClick={() => showModal()}>
+         {children}
+      </div>
+   )
 }
