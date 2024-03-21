@@ -14,6 +14,7 @@ function ScrollSmooth({ children }: ScrollSmoothProps) {
       easing: (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), // https://easings.net
       smoothTouch: false,
       touchMultiplier: 1.1,
+      autoResize: true
    }
 
    return (
