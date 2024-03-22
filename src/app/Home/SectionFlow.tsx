@@ -67,29 +67,27 @@ export default function SectionFlow(): ReactNode {
             </div>
          </ContainerGrid>
          <div className="absolute bottom-0 left-0 flex items-center justify-start">
-            <div className="flex items-center z-10 absolute bottom-20 -left-40">
+            <div className="flex items-center z-10 absolute bottom-20 left-44">
                <Image
-                  className="min-w-[29.5rem] -mr-36 -mt-96"
+                  className="absolute w-full left-[-73%] top-[-73%]"
                   src={CardImage1}
                   alt='card lanistar'
                   width={472}
                />
-               <div className="min-w-[29.5rem] relative">
-                  <Image
-                     className="relative z-10"
-                     src={CardImage3}
-                     alt='card lanistar'
-                     width={472}
-                  />
-                  <Image
-                     className="absolute -top-14 z-0 -left-28"
-                     src={CardShadow}
-                     alt='card lanistar'
-                     width={472}
-                  />
-               </div>
                <Image
-                  className="min-w-[29.5rem] -ml-36 -mb-96"
+                  className="relative z-10 w-[29.5rem]"
+                  src={CardImage3}
+                  alt='card lanistar'
+                  width={472}
+               />
+               <Image
+                  src={CardShadow}
+                  className="absolute top-[-16%] z-0 left-[-20%] w-full"
+                  alt='card lanistar'
+                  width={472}
+               />
+               <Image
+                  className="absolute w-full right-[-73%] bottom-[-73%]"
                   src={CardImage2}
                   alt='card lanistar'
                   width={472}

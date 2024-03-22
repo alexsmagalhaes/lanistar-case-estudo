@@ -61,9 +61,10 @@ export default function Tab1(): ReactNode {
             </ModalActiveWrap>
          </div>
 
-         <div className="bg-gradient-to-br from-[#F9FFFF] to-[#DCFFFF] rounded-xl relative w-[26rem] flex justify-center items-start py-[4.25rem] px-24">
+         <div className="bg-gradient-to-br from-[#F9FFFF] to-[#DCFFFF] rounded-xl relative w-[26rem] max-w-[40%] flex justify-center items-start py-[4.25rem] px-24">
             <div className="flex gap-6 flex-col justify-center relative -bottom-24 z-10">
                <Image
+               className="max-w-full"
                   src={CardImage}
                   alt="Card lanistar"
                   width={216}
@@ -71,7 +72,7 @@ export default function Tab1(): ReactNode {
                <CardCategory image={CategoryIcon} />
             </div>
             <Image
-               className="absolute opacity-50"
+               className="absolute opacity-50 w-4/5"
                src={CardBgImage}
                alt="Phases Lanistar"
                width={349}
