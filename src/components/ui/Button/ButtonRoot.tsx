@@ -23,10 +23,11 @@ interface ButtonRootProps {
    children: ReactNode,
    size?: VariantProps<typeof ButtonVariants>['size'],
    type?: VariantProps<typeof ButtonVariants>['type'],
-   className?: string
+   className?: string,
+   typeButton?: string
 }
 
-export default function ButtonRoot({ children, size, type, className, ...props }: ButtonRootProps): ReactNode {
+export default function ButtonRoot({ children, size, type, className, typeButton, ...props }: ButtonRootProps): ReactNode {
 
    const defaultClass = ButtonVariants({ size, type })
    const mergedClass = twMerge(defaultClass, className)

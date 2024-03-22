@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import Image from "next/image"
 import { useModalContext } from "@/app/context/ModalContext";
+import ModalForm from "./ModalForm";
 
 //assets
 import CheckIcon from '@/assets/icons/check-icon.svg'
@@ -81,7 +82,7 @@ export function ModalCard(): ReactNode {
                </p>
             </div>
 
-            <form className="mb-14">form aqui</form>
+            <ModalForm />
 
             <div className="flex items-center gap-6">
                <Image src={CheckIcon} alt="benefits from card" width={23} height={23} />
