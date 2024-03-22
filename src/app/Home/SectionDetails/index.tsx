@@ -8,7 +8,7 @@ import { Tabs, Tab } from "@nextui-org/tabs";
 //Content
 import Tab1 from "./components/Tab1";
 
-const tabs = [<Tab1 />]
+const tabs = [<Tab1 key={0}/>]
 
 export default function SectionDetails(): ReactNode {
 
