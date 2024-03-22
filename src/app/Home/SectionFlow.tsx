@@ -60,7 +60,7 @@ export default function SectionFlow(): ReactNode {
                      const classCustom = isLastItem ? "@laptop:-mt-6" : ''
 
                      return (
-                        <FlowItem icon={icon} title={title} text={text} className={`items-end ${classCustom}`} />
+                        <FlowItem key={index} icon={icon} title={title} text={text} className={`items-end ${classCustom}`} />
                      )
                   })
                }
