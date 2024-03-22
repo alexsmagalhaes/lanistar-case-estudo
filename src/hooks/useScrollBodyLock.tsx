@@ -1,10 +1,15 @@
 "use client"
 
+import { useLenis } from "@studio-freight/react-lenis";
 import { useEffect, useState } from "react";
 
 export default function useScrollBodyLock() {
    const [lockScroll, setLockScroll] = useState(false);
    const [isClient, setIsClient] = useState(false);
+
+   const lenis = useLenis((item) => {
+      return item;
+   })
 
    useEffect(() => {
       setIsClient(true);
@@ -12,7 +17,7 @@ export default function useScrollBodyLock() {
 
    useEffect(() => {
       if (isClient) {
-         document.body.style.overflowY = lockScroll ? 'hidden' : 'auto';
+         lockScroll ? lenis?.stop() : lenis?.start()
       }
    }, [isClient, lockScroll]);
 
@@ -21,6 +26,7 @@ export default function useScrollBodyLock() {
    const toggleScrollLock = () => setLockScroll(!lockScroll);
 
    return {
+      lockScroll,
       disableScroll,
       enableScroll,
       toggleScrollLock

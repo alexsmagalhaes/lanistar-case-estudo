@@ -10,10 +10,11 @@ import Footer from "@/components/section/Footer";
 import Navbar from "@/components/section/Navbar";
 import SectionCta from "@/components/section/SectionCta";
 import ScrollSmooth from "@/components/ui/ScrollSmooth";
+import LoadingApplication from "@/components/ui/LoadingApplication";
 
 const barlow = Barlow({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['300', '400', '500', '600'],
   display: 'swap',
   variable: '--font-barlow'
 })
@@ -32,6 +33,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <body className={barlow.className} suppressHydrationWarning={true}>
         <ModalContextProvider>
           <ScrollSmooth>
+            <LoadingApplication />
             <Navbar />
             {children}
             <SectionCta />

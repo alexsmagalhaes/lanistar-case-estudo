@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import Image from "next/image"
 import { useModalContext } from "@/app/context/ModalContext";
+import ModalForm from "./ModalForm";
 
 //assets
 import CheckIcon from '@/assets/icons/check-icon.svg'
@@ -13,11 +14,11 @@ import CardShadow from '@/assets/card-modal-shadow.png'
 import CardImage from '@/assets/card-modal.png'
 
 export function ModalCard(): ReactNode {
-   const modal = useModalContext();
+   const { modalActive, hideModal } = useModalContext();
 
    return (
       <div
-         data-modal-active={modal?.modalActive}
+         data-modal-active={modalActive}
          className="bg-white max-w-[62.5rem] w-full relative z-10 transition ease-in-out duration-200 rounded-lg flex overflow-hidden data-[modal-active=false]:translate-y-5"
       >
          <div className="bg-brand-pink-default w-full max-w-96 flex items-center justify-center">
@@ -49,12 +50,12 @@ export function ModalCard(): ReactNode {
 
          </div>
          <div
-            data-modal-active={modal?.modalActive}
+            data-modal-active={modalActive}
             className="px-16 pt-12 pb-24 transition ease-in-out duration-200 text-neutral-gray-400 relative w-full data-[modal-active=false]:translate-y-4 data-[modal-active=false]:opacity-0"
          >
             <button
                className="absolute top-9 right-9 hover:opacity-85 transition duration-200 ease-in-out"
-               onClick={() => modal?.setModalActive(false)}
+               onClick={() => hideModal()}
             >
                <Image
                   src={CloseIcon}
@@ -81,7 +82,7 @@ export function ModalCard(): ReactNode {
                </p>
             </div>
 
-            <form className="mb-14">form aqui</form>
+            <ModalForm />
 
             <div className="flex items-center gap-6">
                <Image src={CheckIcon} alt="benefits from card" width={23} height={23} />

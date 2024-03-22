@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Button from "@/components/ui/Button";
 import ContainerGrid from "@/components/ui/ContainerGrid";
+import { ModalActiveWrap } from "@/app/context/ModalContext";
 import Image from 'next/image'
 
 //assets
@@ -21,20 +22,22 @@ export default function SectionCta(): ReactNode {
                <p className="text-lg text-gray-100 mb-8">
                   We plant a tree for everyone who pre-registers and every new customer. And we’re planning to plant millions.
                </p>
-               <Button.Root>
-                  PRE-REGISTER NOW
-               </Button.Root>
+               <ModalActiveWrap>
+                  <Button.Root>
+                     PRE-REGISTER NOW
+                  </Button.Root>
+               </ModalActiveWrap>
             </div>
 
             <div className="relative w-full max-w-[38.75rem] flex items-start justify-end">
                <Image
-               className="mt-[5rem]"
+                  className="mt-[5rem] max-w-[29.125rem] w-[76%]"
                   src={PhoneImage}
                   alt={"phone lanistar"}
                   width={466}
                />
                <Image
-                  className="absolute -top-5 left-0"
+                  className="absolute top-[-3%] left-0 max-w-[20.625rem] w-[56%]"
                   src={CardImage}
                   alt={"card lanistar"}
                   width={330}
@@ -47,7 +50,7 @@ export default function SectionCta(): ReactNode {
                />
             </div>
          </ContainerGrid>
-         
+
          <Image
             className="absolute top-0 h-full w-full"
             src={BannerBg}

@@ -1,14 +1,13 @@
 'use client'
 
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { StaticImageData } from "next/image";
 import CardSlide from "./CardSlide";
 import ArrowButton from "@/components/swiper/ArrowButton";
 
 // swiper
-
 import { Swiper as SwiperTypes } from 'swiper/types';
-import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css'
 
@@ -69,35 +68,33 @@ export default function CardCarroussel(): ReactNode {
    const prevRef = useRef(null);
    const nextRef = useRef(null);
 
+   const speedSlideChange = 900
+
    const handleSlideChange = () => {
       setCurrentCard(swiperElement !== null ? swiperElement.realIndex : 0)
    };
 
    const handleSlideToLoop = (index: number) => {
-      swiperElement?.slideToLoop(index, 900)
+      swiperElement?.slideToLoop(index, speedSlideChange)
    };
 
    const swiperConfig = {
       className: "mb-14 flex items-center justify-center w-full !pl-9",
-      loopAdditionalSlides: 0,
-      roundLengths: true,
       effect: 'coverflow',
       updateOnWindowResize: true,
       grabCursor: true,
+      autoHeight: false,
       centeredSlides: true,
-      spaceBetween: 0,
       slidesPerView: 'auto' as const,
-      speed: 900,
+      speed: speedSlideChange,
       loop: true,
       autoplay: { delay: 4000, disableOnInteraction: true },
       coverflowEffect: {
          rotate: -24,
-         stretch: 0,
          depth: 232,
          modifier: 0.75,
          slideShadows: false,
       },
-      pagination: true,
       modules: [EffectCoverflow, Autoplay, Navigation],
       navigation: {
          prevEl: prevRef.current,
