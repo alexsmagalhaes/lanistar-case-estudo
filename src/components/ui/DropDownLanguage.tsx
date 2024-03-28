@@ -74,7 +74,7 @@ export default function DropDownLanguage(): ReactNode {
             />
          </button>
 
-         <div className={`flex gap-2 flex-col absolute bg-white py-3 px-3 rounded shadow-2xl shadow-indigo-950/20 transition ease-in-out duration-200 top-8
+         <div className={`flex gap-2 flex-col absolute bg-white py-3 px-3 rounded shadow-2xl shadow-indigo-950/20 z-[60] transition ease-in-out duration-200 top-[120%]
          ${show ? 'opacity-100 pointer-events-auto translate-y-0' :
                'opacity-0 pointer-events-none translate-y-2'}`}>
 
