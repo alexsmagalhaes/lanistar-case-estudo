@@ -19,7 +19,7 @@ export function ModalCard(): ReactNode {
    return (
       <div
          data-modal-active={modalActive}
-         className="bg-white max-w-[62.5rem] w-full relative z-10 transition ease-in-out duration-300 rounded-t-lg @laptop:rounded-lg flex overflow-hidden data-[modal-active=false]:translate-y-5 max-h-dvh scroll-auto"
+         className="bg-white max-w-[62.5rem] w-full relative z-10 transition ease-in-out duration-300 @laptop:duration-200 rounded-t-lg @laptop:rounded-lg flex overflow-hidden data-[modal-active=false]:translate-y-5 max-h-dvh scroll-auto"
       >
          <div
             className="hidden bg-brand-pink-default w-full max-w-96 @laptop:flex items-center justify-center max-h-screen overflow-auto"
@@ -54,10 +54,10 @@ export function ModalCard(): ReactNode {
          <div
             data-lenis-prevent
             data-modal-active={modalActive}
-            className="px-6 @laptop:px-16 pt-14 @laptop:pt-12 pb-16 @laptop:pb-24 transition ease-in-out duration-300 text-neutral-gray-400 relative w-full data-[modal-active=false]:translate-y-4 data-[modal-active=false]:opacity-0 max-h-screen overflow-auto"
+            className="px-6 @laptop:px-16 pt-14 @laptop:pt-12 pb-16 @laptop:pb-24 transition ease-in-out duration-300 @laptop:duration-200 text-neutral-gray-400 relative w-full data-[modal-active=false]:translate-y-4 data-[modal-active=false]:opacity-0 max-h-screen overflow-auto"
          >
             <button
-               className="absolute top-4 right-4 @laptop:top-9 @laptop:right-9 hover:opacity-85 transition duration-300 ease-in-out"
+               className="absolute top-4 right-4 @laptop:top-9 @laptop:right-9 hover:opacity-85 transition duration-300 @laptop:duration-200 ease-in-out"
                onClick={() => hideModal()}
             >
                <Image
