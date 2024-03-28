@@ -47,6 +47,9 @@ const config: Config = {
       maxWidth: {
         'grid': '79rem'
       },
+      hyphens: {
+        auto: 'auto',
+      },
     },
   },
   plugins: [],
