@@ -19,9 +19,11 @@ export function ModalCard(): ReactNode {
    return (
       <div
          data-modal-active={modalActive}
-         className="bg-white max-w-[62.5rem] w-full relative z-10 transition ease-in-out duration-200 rounded-lg flex overflow-hidden data-[modal-active=false]:translate-y-5"
+         className="bg-white max-w-[62.5rem] w-full relative z-10 transition ease-in-out duration-200 rounded-t-lg @laptop:rounded-lg flex overflow-hidden data-[modal-active=false]:translate-y-5 max-h-dvh scroll-auto"
       >
-         <div className="bg-brand-pink-default w-full max-w-96 flex items-center justify-center">
+         <div
+            className="hidden bg-brand-pink-default w-full max-w-96 @laptop:flex items-center justify-center max-h-screen overflow-auto"
+         >
             <div className="flex flex-col items-center gap-8 mt-16">
                <div className="relative flex justify-end z-10 -right-8">
                   <Image
@@ -50,31 +52,32 @@ export function ModalCard(): ReactNode {
 
          </div>
          <div
+            data-lenis-prevent
             data-modal-active={modalActive}
-            className="px-16 pt-12 pb-24 transition ease-in-out duration-200 text-neutral-gray-400 relative w-full data-[modal-active=false]:translate-y-4 data-[modal-active=false]:opacity-0"
+            className="px-6 @laptop:px-16 pt-14 @laptop:pt-12 pb-16 @laptop:pb-24 transition ease-in-out duration-200 text-neutral-gray-400 relative w-full data-[modal-active=false]:translate-y-4 data-[modal-active=false]:opacity-0 max-h-screen overflow-auto"
          >
             <button
-               className="absolute top-9 right-9 hover:opacity-85 transition duration-200 ease-in-out"
+               className="absolute top-4 right-4 @laptop:top-9 @laptop:right-9 hover:opacity-85 transition duration-200 ease-in-out"
                onClick={() => hideModal()}
             >
                <Image
+                  className="w-11 @laptop:w-9"
                   src={CloseIcon}
                   alt="close modal"
                   width={37}
-                  height={36}
                />
             </button>
 
             <Image
-               className="mb-9 w-6 h-6"
+               className="mb-4 @laptop:mb-9 w-6 h-6"
                src={WorldIcon}
                alt="close modal"
                width={22}
                height={22}
             />
 
-            <div className="mb-10 max-w-[410px]">
-               <div className="text-[2rem]/none uppercase font-normal text-neutral-gray-300 mb-4">
+            <div className="mb-6 @laptop:mb-10 @laptop:max-w-[25.625rem]">
+               <div className="text-2xl @laptop:text-[2rem]/none uppercase font-normal text-neutral-gray-300 mb-4">
                   GET THE APP, AND GET ON THE WAITLIST<span className="text-brand-blue-default">.</span>
                </div>
                <p className="text-base">
@@ -84,9 +87,11 @@ export function ModalCard(): ReactNode {
 
             <ModalForm />
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 @laptop:gap-6 mt-7 @laptop:mt-14">
                <Image src={CheckIcon} alt="benefits from card" width={23} height={23} />
-               <span>Instant spending notifications across all your <span className="font-medium">payment cards</span></span>
+               <span className="text-neutral-gray-400 text-sm/normal @laptop:text-base/normal">
+                  Instant spending notifications across all your <span className="font-medium">payment cards</span>
+               </span>
             </div>
          </div>
       </div>

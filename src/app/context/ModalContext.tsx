@@ -8,13 +8,16 @@ type ContextType = {
    showModal: () => void;
    hideModal: () => void;
    toggleModal: () => void;
+   disableScroll: () => void,
+   enableScroll: () => void,
+   toggleScrollLock: () => void
 };
 
 const ModalContext = createContext<ContextType | undefined>(undefined);
 
 export function ModalContextProvider({ children }: { children: ReactNode }) {
    const [modalActive, setModalActive] = useState(false);
-   const { disableScroll, enableScroll } = useScrollBodyLock();
+   const { disableScroll, enableScroll, toggleScrollLock } = useScrollBodyLock();
 
    useEffect(() => {
       modalActive ? disableScroll() : enableScroll();
@@ -28,7 +31,10 @@ export function ModalContextProvider({ children }: { children: ReactNode }) {
       modalActive,
       showModal,
       hideModal,
-      toggleModal
+      toggleModal,
+      disableScroll,
+      enableScroll,
+      toggleScrollLock
    };
 
    return (

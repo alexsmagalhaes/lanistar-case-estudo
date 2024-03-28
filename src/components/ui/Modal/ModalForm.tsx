@@ -29,8 +29,8 @@ export default function ModalForm(): ReactNode {
    }, [isSubmitSuccessful, reset]);
 
    return (
-      <form onSubmit={handleSubmit(onSubmit)} className="mb-14">
-         <div className="flex items-stretch gap-5">
+      <form onSubmit={handleSubmit(onSubmit)}>
+         <div className="flex items-stretch flex-col @laptop:flex-row gap-4 @laptop:gap-5">
             <div>
                <label className="relative flex items-center">
                   <span className="absolute ml-4 text-neutral-gray-200">
@@ -40,7 +40,7 @@ export default function ModalForm(): ReactNode {
                   <InputMask
                      mask="(99) 9 9999 - 9999"
                      maskPlaceholder=''
-                     className="py-4 text-base/snug rounded-md pr-4 pl-14 border border-neutral-gray-500 text-neutral-gray-400 focus:text-neutral-gray-200 focus:outline-neutral-gray-500"
+                     className="py-4 text-base/snug rounded-md pr-4 pl-14 border border-neutral-gray-500 text-neutral-gray-400 focus:text-neutral-gray-200 focus:outline-neutral-gray-500 flex-grow"
                      placeholder="Phone number"
                      {...register('phone')}
                   />
