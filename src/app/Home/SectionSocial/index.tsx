@@ -6,7 +6,7 @@ import ListImages from "./components/ListImages";
 
 export default function SectionSocial(): ReactNode {
    return (
-      <section className="mt-20 @laptop:mt-32 relative overflow-x-hidden">
+      <section className="mt-20 @laptop:mt-32 relative overflow-hidden">
          <ContainerGrid>
             <div className="mb-10 @laptop:mb-20 z-10 flex gap-9 @laptop:gap-8 flex-col @laptop:flex-row items-center justify-between">
                <h2 className="text-[2rem] @laptop:text-[2.5rem] leading-none font-medium text-neutral-gray-400">

@@ -60,7 +60,7 @@ export default function Navbar(): ReactNode {
             })
                .to(menu, {
                   y: - window.innerHeight - 100,
-                  duration: .3,
+                  duration: .35,
                   ease: "ease",
                }, )
          }
