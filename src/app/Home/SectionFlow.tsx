@@ -43,16 +43,12 @@ const flowItems: FlowItemProps[] = [
 
 export default function SectionFlow(): ReactNode {
    return (
-      <section className="pt-28 pb-40 bg-dark relative overflow-hidden">
-         <ContainerGrid className="flex items-start justify-between">
-            <h2 className="text-neutral-gray-400 text-[2.5rem] font-medium">
-               CONTROL YOUR<br />
-               <span className="text-white">
-
-                  MONEY FLOW
-               </span>
+      <section className="pt-[5.75rem] @laptop:pt-28 pb-96 @laptop:pb-40 bg-dark relative overflow-hidden">
+         <ContainerGrid className="flex items-start flex-col @laptop:flex-row justify-between">
+            <h2 className="text-neutral-gray-400 mb-9 @laptop:mb-0 text-[2rem] @laptop:text-[2.5rem] font-medium @laptop:max-w-72">
+               CONTROL YOUR <span className="text-white">MONEY FLOW</span>
             </h2>
-            <div className="grid grid-cols-2 text-left gap-x-28 gap-y-10 max-w-[49rem]" dir="rtl">
+            <div className="grid @laptop:grid-cols-2 gap-8 text-left @laptop:gap-x-28 @laptop:gap-y-10 @laptop:max-w-[49rem]" dir="rtl">
                {
                   flowItems.map(({ icon, title, text }: FlowItemProps, index: number) => {
 
@@ -67,7 +63,7 @@ export default function SectionFlow(): ReactNode {
             </div>
          </ContainerGrid>
          <div className="absolute bottom-0 left-0 flex items-center justify-start">
-            <div className="flex items-center z-10 absolute bottom-20 left-44">
+            <div className="flex items-center z-10 absolute bottom-12 left-20 @laptop:bottom-20 @laptop:left-44">
                <Image
                   className="absolute w-full left-[-73%] top-[-73%]"
                   src={CardImage1}
@@ -75,7 +71,7 @@ export default function SectionFlow(): ReactNode {
                   width={472}
                />
                <Image
-                  className="relative z-10 w-[29.5rem]"
+                  className="relative z-10 w-[19rem] @laptop:w-[29.5rem]"
                   src={CardImage3}
                   alt='card lanistar'
                   width={472}
@@ -94,9 +90,9 @@ export default function SectionFlow(): ReactNode {
                />
             </div>
             <Image
-               className=""
+               className="max-w-[34rem] @laptop:max-w-max"
                src={BgSection}
-               alt='card lanistar'
+               alt='bg card lanistar'
                width={888}
             />
          </div>

@@ -17,7 +17,7 @@ export default function FlowItem({ icon, title, text, className }: FlowItemProps
    return (
       <div className={mergedClasses}>
          <Image
-            className="mb-8"
+            className="mb-4 @laptop:mb-8"
             src={icon}
             alt={text}
             width={42}
