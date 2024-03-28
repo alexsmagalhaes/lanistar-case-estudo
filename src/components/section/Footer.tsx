@@ -62,10 +62,10 @@ const diferences: diferencesProps[] = [
 
 export default function Footer(): ReactNode {
    return (
-      <footer className="pb-14 pt-28 text-neutral-gray-300">
+      <footer className="pb-[4.5rem] @laptop:pb-14 pt-14 @laptop:pt-28 text-neutral-gray-300">
          <ContainerGrid>
-            <div className="flex justify-between items-start gap-[5rem]">
-               <div className="gap-8 flex justify-between items-start max-w-[18.5rem] mr-8">
+            <div className="flex justify-between items-stretch @laptop:items-start flex-col @laptop:flex-row gap-10 @desktop:gap-[5rem]">
+               <div className="mb-4 @laptop:mb-0 gap-8 flex justify-between @laptop:items-start items-center @laptop:max-w-[18.5rem] mr-0 @desktop:mr-8 flex-col @laptop:flex-row">
                   <Link
                      className="transition duration-300 ease-in-out hover:opacity-85"
                      href="/"
@@ -79,14 +79,14 @@ export default function Footer(): ReactNode {
                      />
                   </Link>
 
-                  <div className="flex flex-col gap-6">
+                  <div className="grid grid-cols-2 w-full @laptop:w-auto @laptop:flex @laptop:flex-col gap-4 @laptop:gap-6">
                      <Link
-                        className="transition duration-300 ease-in-out hover:opacity-85 rounded-lg py-3 px-4 max-h-14 border border-neutral-gray-500 flex justify-center items-center"
+                        className="transition duration-300 ease-in-out hover:opacity-85 rounded-lg py-2 @laptop:py-3 px-4 max-h-14 border border-neutral-gray-500 flex justify-center items-center"
                         target="_blank"
                         href="#"
                      >
                         <Image
-                           className="h-9 w-auto"
+                           className="h-7 @laptop:h-9 w-auto"
                            alt="playstore"
                            src={PlayStoreIcon}
                         />
@@ -97,15 +97,15 @@ export default function Footer(): ReactNode {
                         target="_blank"
                      >
                         <Image
-                           className="h-[2.125rem] w-auto"
-                           alt="playstore"
+                           className="h-7 @laptop:h-[2.125rem] w-auto"
+                           alt="appstore"
                            src={AppStoreIcon}
                         />
                      </Link>
                   </div>
                </div>
 
-               <div className="flex flex-col gap-6 items-start">
+               <div className="grid grid-cols-2 gap-4 @laptop:flex @laptop:flex-col @laptop:gap-6 items-start">
                   {
                      diferences.map(({ text, icon, path }: diferencesProps, index: number) => {
                         return (
@@ -127,7 +127,7 @@ export default function Footer(): ReactNode {
                   }
                </div>
 
-               <div className="text-lg/snug grid grid-cols-2 gap-8 max-w-[23.4375rem]">
+               <div className="text-base/snug @laptop:text-lg/snug grid grid-cols-2 @laptop:gap-8 gap-4 @desktop:max-w-[23.4375rem]">
                   {
                      menuLinks.map(({ text, path }: menuLinksProps, index: number) => {
                         return (
@@ -143,7 +143,7 @@ export default function Footer(): ReactNode {
                   }
                </div>
 
-               <div className="flex gap-8 items-center ml-5">
+               <div className="flex @laptop:flex-col @desktop:flex-row gap-8 items-center ml-0 @desktop::ml-5">
                   <Link
                      className="transition duration-300 ease-in-out  hover:text-brand-blue-dark"
                      href="#"
@@ -179,15 +179,15 @@ export default function Footer(): ReactNode {
                </div>
             </div>
 
-            <hr className="h-[1.5px] w-full bg-[#E4E7EB] my-14" />
-            <p className="text-sm mb-16">
+            <hr className="h-[1.5px] w-full bg-[#E4E7EB] mb-6 mt-12 @laptop:my-14" />
+            <p className="text-sm mb-8 @laptop:mb-16">
                Lanistar Ltd is a registered EMD agent (FRN: 902996) of Modulr FS Limited and may distribute and redeem e-money and provide payment services. Modulr FS Limited is authorised by the Financial Conduct Authority (FCA) under the Electronic Money Regulations 2011 (FRN: 900573) for the issuing of electronic money and to provide payment services. Lanistar Limited (Lanistar) is currently only carrying out pre-launch marketing in preparation for a future launch of Lanistar branded payment cards (Cards). Lanistar is finalising arrangements with various partner firms who are authorised and/or regulated (by the FCA and other overseas regulators) and the Cards will only be launched and go-live when those arrangements are in place.
             </p>
-            <div className="flex justify-between max-w-[63.25rem] items-center">
+            <div className="flex justify-between @laptop:max-w-3xl @desktop:max-w-[63.25rem] items-center">
                <span className="text-sm font-medium">
-                  © 2021 Lanistar.com
+                  © 2024 Lanistar.com
                </span>
-               <div className="flex gap-5 items-center">
+               <div className="@laptop:flex gap-5 items-center hidden @laptop:visible">
                   <span className="text-sm">
                      Powered by
                   </span>
