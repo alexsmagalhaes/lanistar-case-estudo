@@ -22,9 +22,9 @@ const cards: CardDifferencesProps[] = [
 
 export default function SectionDifferences(): ReactNode {
    return (
-      <section className="py-20 border-b border-neutral-gray-600 border-opacity-45">
+      <section className="py-16 @laptop:py-20 border-b border-neutral-gray-600 border-opacity-45">
          <ContainerGrid>
-            <div className="flex items-center justify-between max-w-6xl gap-16">
+            <div className="flex @laptop:items-center justify-between @laptop:max-w-6xl gap-12 @laptop:gap-16 flex-col @laptop:flex-row">
                {
                   cards.map(({ image, text }: CardDifferencesProps, index: number) => {
                      return (
