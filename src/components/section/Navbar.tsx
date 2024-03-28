@@ -46,23 +46,23 @@ export default function Navbar(): ReactNode {
          if (menuActived) {
             tl.to(menu, {
                y: 0,
-               duration: .5,
+               duration: .375,
             })
                .to(menuContent, {
-                  opacity: 100,
-                  duration: .5,
-               }, "-=0.1")
+                  opacity: 1,
+                  duration: .25,
+               })
          } else {
             tl.to(menuContent, {
                opacity: 0,
-               duration: .2,
+               duration: .15,
                ease: "ease",
             })
                .to(menu, {
                   y: - window.innerHeight - 100,
                   duration: .5,
                   ease: "ease",
-               }, "-=0.025")
+               }, )
          }
       }
    }, [menuActived, menuRef]);
@@ -98,7 +98,7 @@ export default function Navbar(): ReactNode {
 
                   <div
                      ref={menuContentRef}
-                     className="flex flex-col items-center gap-14 opacity-0 @laptop:opacity-100"
+                     className="flex flex-col items-center gap-14 opacity-0 @laptop:opacity-100 transition-none"
                   >
                      <div className="max-w-[7.5rem] @laptop:max-w-none flex @laptop:gap-14 mr-2 @laptop:flex-row flex-col gap-6">
                         {
