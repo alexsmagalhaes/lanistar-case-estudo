@@ -79,16 +79,14 @@ export default function CardCarroussel(): ReactNode {
    };
 
    const swiperConfig = {
-      className: "mb-14 flex items-center justify-center w-full !pl-9",
       effect: 'coverflow',
       updateOnWindowResize: true,
       grabCursor: true,
-      autoHeight: false,
       centeredSlides: true,
       slidesPerView: 'auto' as const,
       speed: speedSlideChange,
       loop: true,
-      autoplay: { delay: 4000, disableOnInteraction: true },
+      autoplay: { delay: 4000, disableOnInteraction: false },
       coverflowEffect: {
          rotate: -24,
          depth: 232,
@@ -104,8 +102,10 @@ export default function CardCarroussel(): ReactNode {
 
    return (
       <>
-         <div className="flex relative items-center justify-center">
+         <div className="flex relative items-center max-w-full justify-center">
             <Swiper
+               className="mb-14 flex min-w-[100vw] @laptop:min-w-0 @laptop:max-w-full"
+
                onInit={(swiper) => { setSwiperElement(swiper); }}
 
                {...swiperConfig}
@@ -119,7 +119,9 @@ export default function CardCarroussel(): ReactNode {
                      <SwiperSlide
                         onClick={() => { handleSlideToLoop(index) }}
                         data-current-card={currentCard === index ? true : false}
-                        className="w-[17.375rem] max-w-[17.375rem] mx-[2.25rem] blur-sm transition-all data-[current-card=true]:blur-none data-[current-card=true]:opacity-100 will-change-transform"
+                        className="max-w-[13.25rem] @laptop:max-w-[17.375rem] mx-6 @laptop:mx-9
+                        
+                        blur-sm transition-all data-[current-card=true]:blur-none data-[current-card=true]:opacity-100 will-change-transform"
                         key={index}
                      >
                         <CardSlide src={image} alt={colorName} />
@@ -128,12 +130,12 @@ export default function CardCarroussel(): ReactNode {
                })}
             </Swiper>
 
-            <div className="max-w-[29rem] w-full flex justify-between absolute z-10 pl-[1.875rem] mb-14">
+            <div className="max-w-full w-full @laptop:max-w-[27rem] flex justify-between absolute z-10 mb-14">
                <div ref={prevRef}><ArrowButton reverse /></div>
                <div ref={nextRef}><ArrowButton /></div>
             </div>
          </div >
-         <div className="pl-[1.875rem]">
+         <div className="">
             <ColorSelector color={cards[currentCard].color} colorName={cards[currentCard].colorName} />
          </div>
       </>

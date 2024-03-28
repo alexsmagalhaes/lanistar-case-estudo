@@ -8,13 +8,11 @@ interface CardSlideProps {
 export default function CardSlide({ src, alt }: CardSlideProps) {
 
    return (
-      <div>
          <Image
-            className="w-[17.375rem] h-auto"
+            className="m-auto h-auto will-change-transform"
             src={src}
             alt={alt}
             width={278}
          />
-      </div>
    )
 }
