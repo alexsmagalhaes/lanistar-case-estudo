@@ -32,9 +32,9 @@ const benefits: BenefitItemProps[] = [
 
 export default function Tab1(): ReactNode {
    return (
-      <div className="flex justify-between items-end">
-         <div className="flex flex-col items-start max-w-[33.25rem]">
-            <h2 className="mb-6 text-[2.5rem] font-medium leading-snug text-neutral-gray-400">
+      <div className="flex justify-between items-end flex-col @laptop:flex-row">
+         <div className="flex flex-col items-start @laptop:max-w-[33.25rem] mb-12 @laptop:mb-0">
+            <h2 className="mb-6 text-[2rem] @laptop:text-[2.5rem] font-medium leading-snug text-neutral-gray-400">
                A SECURITY DETAIL FOR YOUR <span className="text-neutral-gray-200">BANK DETAILS</span>
             </h2>
             <p className="mb-10 text-lg/snug font-medium text-neutral-gray-300">
@@ -61,7 +61,7 @@ export default function Tab1(): ReactNode {
             </ModalActiveWrap>
          </div>
 
-         <div className="bg-gradient-to-br from-[#F9FFFF] to-[#DCFFFF] rounded-xl relative w-[26rem] max-w-[40%] flex justify-center items-start py-[4.25rem] px-24">
+         <div className="bg-gradient-to-br from-[#F9FFFF] to-[#DCFFFF] rounded-xl relative w-full @laptop:w-[26rem] @laptop:max-w-[40%] flex justify-center items-start py-[4.25rem] px-24 mb-12 @laptop:mb-0">
             <div className="flex gap-6 flex-col justify-center relative -bottom-24 z-10">
                <Image
                className="max-w-full"
@@ -72,7 +72,7 @@ export default function Tab1(): ReactNode {
                <CardCategory image={CategoryIcon} />
             </div>
             <Image
-               className="absolute opacity-50 w-4/5"
+               className="absolute opacity-50 w-4/5 @tablet:w-1/2 @laptop:w-4/5"
                src={CardBgImage}
                alt="Phases Lanistar"
                width={349}
