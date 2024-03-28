@@ -24,8 +24,8 @@ export default function SectionHero(): ReactNode {
                <h1 className="text-neutral-gray-400 text-5xl @laptop:text-7xl font-light mb-4 @laptop:mb-6">
                   BE <span className="text-neutral-gray-100 break-words hyphens-auto">UNTOUCHABLE</span>
                </h1>
-               <p className="text-lg/snug @laptop:text-2xl/snug font-normal text-neutral-gray-300 mb-8 @laptop:mb-10">
-                  A polymorphic payment card for those who know<br/> influence is the only currency that matters.
+               <p className="text-lg/snug @laptop:text-2xl/snug font-normal text-neutral-gray-300 mb-8 @laptop:mb-10 @laptop:max-w-xl">
+                  A polymorphic payment card for those who know influence is the only currency that matters.
                </p>
                <ModalActiveWrap>
                   <Button.Root>
